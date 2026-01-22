@@ -5,14 +5,17 @@ function getRandomIntInclusive(min, max) {
 }
 
 var source = document.getElementById('source');
-var A_tableau = []
+let compteur = 0
 
-for (let i = 0 ; i < 22 ; i++){
-    let value = getRandomIntInclusive(-10, 40)
-    source.innerText = value
-    A_tableau.push(value)
-}
 
-console.log(A_tableau[21])
+const repetition = setInterval(() => {
+  source.innerText = getRandomIntInclusive(-10, 40)
+  compteur++
+
+  if (compteur == 20) {
+    clearInterval(repetition)
+  }
+}, 2000);
+
 
 
