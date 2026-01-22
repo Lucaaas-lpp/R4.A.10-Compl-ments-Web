@@ -20,8 +20,10 @@ const repetition = setInterval(() => {
     info.innerText = "Brrrrrrr, un peu froid ce matin, mets ta cagoule !"
   } else if (0 < value && value <= 20) {
     box.style.border = '2px solid green'
+    info.innerText = null
   } else if (20 < value && value <= 30) {
     box.style.border = '2px solid orange'
+    info.innerText = null
   } else if (30 < value && value <= 40) {
     box.style.border = '2px solid red'
     info.innerText = "Caliente ! Vamos a la playa, ho hoho hoho !!"
