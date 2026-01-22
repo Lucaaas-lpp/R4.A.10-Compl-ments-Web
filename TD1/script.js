@@ -18,11 +18,11 @@ const repetition = setInterval(() => {
   if (-10 <= value && value <= 0) {
     box.style.border = '2px solid blue'
     info.innerText = "Brrrrrrr, un peu froid ce matin, mets ta cagoule !"
-  } else if (0 < value && value <= 20)
+  } else if (0 < value && value <= 20) {
     box.style.border = '2px solid green'
-  else if (20 < value && value <= 30) {}
+  } else if (20 < value && value <= 30) {
     box.style.border = '2px solid orange'
-  else if (30 < value && value <= 40) {
+  } else if (30 < value && value <= 40) {
     box.style.border = '2px solid red'
     info.innerText = "Caliente ! Vamos a la playa, ho hoho hoho !!"
   }
