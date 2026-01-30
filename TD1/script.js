@@ -12,21 +12,38 @@ let compteur = 0
 
 const repetition = setInterval(() => {
   let value = getRandomIntInclusive(-10, 40)
-  source.innerText = value
+  let tempNode = document.createTextNode(value + ' °C')
+
+
+  while (source.firstChild) {
+    source.removeChild(source.firstChild);
+  }
+
+  source.appendChild(tempNode)
+
   compteur++
 
+  while (info.firstChild) {
+    info.removeChild(info.firstChild);
+  }
+
   if (-10 <= value && value <= 0) {
-    box.style.border = '2px solid blue'
-    info.innerText = "Brrrrrrr, un peu froid ce matin, mets ta cagoule !"
-  } else if (0 < value && value <= 20) {
-    box.style.border = '2px solid green'
-    info.innerText = null
-  } else if (20 < value && value <= 30) {
-    box.style.border = '2px solid orange'
-    info.innerText = null
-  } else if (30 < value && value <= 40) {
-    box.style.border = '2px solid red'
-    info.innerText = "Caliente ! Vamos a la playa, ho hoho hoho !!"
+    box.className = "bleu"
+
+    var msgFroid = document.createTextNode("Brrrrrrr, un peu froid ce matin, mets ta cagoule !");
+    info.appendChild(msgFroid);
+  }
+  else if (value > 0 && value <= 20) {
+    box.className = "vert"
+  }
+  else if (value > 20 && value <= 30) {
+    box.className = "orange"
+  }
+  else {
+    box.className = "rouge";
+
+    var msgChaud = document.createTextNode("Caliente ! Vamos a la playa, ho hoho hoho !!");
+    info.appendChild(msgChaud);
   }
 
   if (compteur == 20) {
