@@ -7,11 +7,24 @@ function getRandomIntInclusive(min, max) {
 var source = document.getElementById('source');
 var box = document.getElementById('box');
 var info = document.getElementById('info');
+var historique = document.getElementById('historique');
 let compteur = 0
 
 
 const repetition = setInterval(() => {
   let value = getRandomIntInclusive(-10, 40)
+  let histo = ""
+
+  if(historique.firstChild) {
+    histo = ', ' + value + ' °C'
+  } else {
+    histo = value + ' °C'
+  }
+
+  let histoNode = document.createTextNode(histo)
+  historique.appendChild(histoNode)
+
+
   let tempNode = document.createTextNode(value + ' °C')
 
 
